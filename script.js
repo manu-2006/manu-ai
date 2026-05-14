@@ -258,6 +258,10 @@ window.addEventListener("scroll", () => {
 // CONTACT FORM
 // ==========================
 
+// ==========================
+// CONTACT FORM
+// ==========================
+
 emailjs.init("dA8wxfUZxcpBV3vRB");
 
 const contactForm =
@@ -288,10 +292,6 @@ if(contactForm){
 
             .then(function(){
 
-                alert(
-                    "Message Sent Successfully!"
-                );
-
                 submitBtn.innerText =
                 "Message Sent ✓";
 
@@ -310,12 +310,15 @@ if(contactForm){
 
                 console.log(error);
 
-                alert(
-                    "Failed to send message."
-                );
-
                 submitBtn.innerText =
-                "Send Message";
+                "Failed to Send";
+
+                setTimeout(()=>{
+
+                    submitBtn.innerText =
+                    "Send Message";
+
+                },3000);
 
             });
 
