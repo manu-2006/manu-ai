@@ -1,0 +1,689 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#020617;
+    color:white;
+    overflow-x:hidden;
+    position:relative;
+}
+
+
+/* =========================================
+   CYBER BACKGROUND
+========================================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at top left, rgba(0,234,255,0.12), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(168,85,247,0.12), transparent 25%);
+
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+
+    background-size:40px 40px;
+
+    z-index:-1;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#020617;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#00eaff;
+    border-radius:20px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:18px 50px;
+
+    backdrop-filter:blur(15px);
+    background:rgba(2,6,23,0.75);
+
+    border-bottom:1px solid rgba(255,255,255,0.06);
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+nav a{
+    position:relative;
+
+    margin:0 15px;
+
+    color:#94a3b8;
+    text-decoration:none;
+
+    font-size:15px;
+    font-weight:500;
+
+    transition:0.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#00eaff;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+
+    width:0%;
+    height:2px;
+
+    bottom:-5px;
+    left:0;
+
+    background:#00eaff;
+
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+
+/* =========================================
+   TOP RIGHT ICONS
+========================================= */
+
+.top-icons{
+    display:flex;
+    align-items:center;
+}
+
+.top-icons a{
+    margin-left:15px;
+
+    color:#00eaff;
+    font-size:20px;
+
+    transition:0.3s;
+}
+
+.top-icons a:hover{
+    transform:translateY(-5px) scale(1.15);
+    color:white;
+    text-shadow:0 0 15px #00eaff;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:100px 20px;
+
+    position:relative;
+}
+
+
+/* =========================================
+   PROFILE IMAGE
+========================================= */
+
+.profile{
+    width:200px;
+    height:200px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+    object-position:center 20%;
+
+    border:4px solid #00eaff;
+
+    box-shadow:
+    0 0 20px rgba(0,234,255,0.5),
+    0 0 60px rgba(0,234,255,0.2);
+
+    transition:0.5s;
+}
+
+.profile:hover{
+    transform:scale(1.05);
+    box-shadow:
+    0 0 30px rgba(0,234,255,0.7),
+    0 0 80px rgba(0,234,255,0.3);
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+h1{
+    font-size:58px;
+    margin-top:25px;
+
+    color:#00eaff;
+
+    text-shadow:0 0 15px rgba(0,234,255,0.5);
+}
+
+.typing{
+    color:white;
+}
+
+.subtitle{
+    margin-top:15px;
+
+    color:#94a3b8;
+
+    font-size:18px;
+    max-width:700px;
+    line-height:1.7;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.buttons{
+    margin-top:35px;
+}
+
+.buttons a{
+    display:inline-block;
+
+    margin:10px;
+    padding:14px 30px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+    font-weight:600;
+
+    transition:0.3s;
+}
+
+
+/* PRIMARY BUTTON */
+
+.buttons a:first-child{
+    background:#00eaff;
+    color:black;
+
+    box-shadow:0 0 20px rgba(0,234,255,0.4);
+}
+
+.buttons a:first-child:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 30px rgba(0,234,255,0.7);
+}
+
+
+/* SECOND BUTTON */
+
+.buttons a:last-child{
+    border:1px solid #00eaff;
+    color:#00eaff;
+    background:transparent;
+}
+
+.buttons a:last-child:hover{
+    background:#00eaff;
+    color:black;
+    transform:translateY(-5px);
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.card{
+    max-width:1000px;
+
+    margin:60px auto;
+    padding:35px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.04);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    transition:0.4s;
+
+    height:auto;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 0 30px rgba(0,234,255,0.15);
+}
+
+
+/* =========================================
+   SECTION TITLES
+========================================= */
+
+.card h2{
+    margin-bottom:25px;
+
+    font-size:32px;
+
+    color:#00eaff;
+}
+
+
+/* =========================================
+   PROJECT GRID
+========================================= */
+
+.projects-grid{
+    display:grid;
+    gap:25px;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    align-items:start;
+}
+
+
+/* =========================================
+   PROJECT CARD
+========================================= */
+
+.project-card{
+    position:relative;
+
+    background:rgba(255,255,255,0.04);
+
+    padding:18px;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,0.05);
+
+    transition:0.4s;
+
+    height:auto;
+}
+
+.project-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+    height:5px;
+
+    top:0;
+    left:0;
+
+    background:linear-gradient(
+        90deg,
+        #00eaff,
+        #8b5cf6
+    );
+}
+
+.project-card:hover{
+    transform:translateY(-12px);
+
+    box-shadow:
+    0 0 25px rgba(0,234,255,0.25);
+}
+
+
+/* PROJECT IMAGE */
+
+.project-card img{
+    width:100%;
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    transition:0.4s;
+}
+
+.project-card:hover img{
+    transform:scale(1.04);
+}
+
+
+/* PROJECT TEXT */
+
+.project-card h3{
+    margin-top:18px;
+
+    color:#00eaff;
+}
+
+.project-card p{
+    margin-top:12px;
+
+    color:#94a3b8;
+
+    line-height:1.7;
+    font-size:14px;
+}
+
+
+/* =========================================
+   GITHUB BUTTON
+========================================= */
+
+.github-btn{
+    display:inline-block;
+
+    margin-top:18px;
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    border:1px solid #00eaff;
+
+    color:#00eaff;
+
+    text-decoration:none;
+
+    transition:0.3s;
+}
+
+.github-btn:hover{
+    background:#00eaff;
+    color:black;
+
+    box-shadow:0 0 15px rgba(0,234,255,0.4);
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+input,
+textarea{
+    width:100%;
+
+    margin:12px 0;
+    padding:14px;
+
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.08);
+
+    background:#06142e;
+    color:white;
+
+    font-size:15px;
+
+    transition:0.3s;
+}
+
+input:focus,
+textarea:focus{
+    outline:none;
+
+    border-color:#00eaff;
+
+    box-shadow:0 0 15px rgba(0,234,255,0.2);
+}
+
+
+/* BUTTON */
+
+button{
+    padding:14px 28px;
+
+    background:#00eaff;
+    color:black;
+
+    border:none;
+    border-radius:12px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+button:hover{
+    transform:translateY(-4px);
+
+    box-shadow:0 0 20px rgba(0,234,255,0.4);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+    text-align:center;
+
+    padding:40px 20px;
+
+    margin-top:60px;
+
+    border-top:1px solid rgba(255,255,255,0.05);
+}
+
+
+/* FOOTER ICONS */
+
+.footer-icons{
+    margin-top:15px;
+}
+
+.footer-icons a{
+    margin:0 12px;
+
+    color:#00eaff;
+    font-size:22px;
+
+    transition:0.3s;
+}
+
+.footer-icons a:hover{
+    color:white;
+
+    text-shadow:0 0 15px #00eaff;
+
+    transform:translateY(-4px);
+}
+
+
+/* =========================================
+   REVEAL ANIMATION
+========================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+
+    transition:1s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* =========================================
+   CURSOR GLOW
+========================================= */
+
+.cursor-glow{
+    position:fixed;
+
+    width:300px;
+    height:300px;
+
+    background:radial-gradient(
+        circle,
+        rgba(0,234,255,0.15),
+        transparent 70%
+    );
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    z-index:-1;
+}
+
+
+/* =========================================
+   SCROLL TOP BUTTON
+========================================= */
+
+.scroll-top{
+    position:fixed;
+
+    bottom:25px;
+    right:25px;
+
+    width:45px;
+    height:45px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#00eaff;
+    color:black;
+
+    font-size:18px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:0.3s;
+
+    z-index:1000;
+}
+
+.scroll-top.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.scroll-top:hover{
+    transform:translateY(-5px);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:900px){
+
+    header{
+        padding:18px 20px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    h1{
+        font-size:42px;
+    }
+
+    .subtitle{
+        font-size:16px;
+    }
+
+    .card{
+        margin:40px 15px;
+        padding:25px;
+    }
+
+    .profile{
+        width:160px;
+        height:160px;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    h1{
+        font-size:34px;
+    }
+
+    .buttons a{
+        width:90%;
+    }
+
+}
