@@ -16,6 +16,7 @@ const Hero = () => {
     });
 
     // The muted video is allowed to autoplay; the control can pause or resume it.
+    // Deployment trigger: keep the hero reel sound and right-aligned framing update in sync.
   }, []);
 
   const toggleVideo = async (event) => {
