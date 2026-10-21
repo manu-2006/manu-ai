@@ -49,6 +49,7 @@ const Hero = () => {
         loop
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
+        onError={(event) => console.error('Hero video failed to load:', event.currentTarget.error)}
         className="absolute inset-0 z-0 h-full w-full object-cover"
         aria-label="Hero background reel"
       >
@@ -58,7 +59,7 @@ const Hero = () => {
       {/* Subtle overlay keeps the text readable over video */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-black/75 via-black/30 to-black/25"
+        className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-black/35 via-black/10 to-black/10"
       />
 
       {/* Content Container */}
@@ -105,8 +106,6 @@ const Hero = () => {
         {/* Video playback control */}
         <button
           type="button"
-          data-aos="zoom-in"
-          data-aos-delay="600"
           onClick={toggleVideo}
           aria-label={isPlaying ? 'Pause hero reel' : 'Play hero reel'}
           className="mt-8 md:mt-0 flex flex-row md:flex-col items-center gap-2 md:gap-3 cursor-pointer group self-start md:self-auto"
