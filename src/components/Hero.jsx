@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import heroVideo from '../assets/hero-video/hero.mp4';
+import heroVideo from '../assets/hero-video/80810-Picsart-BackgroundRemover.webm';
 
 const Hero = () => {
   const videoRef = useRef(null);
@@ -53,7 +53,7 @@ const Hero = () => {
         className="absolute inset-0 z-0 h-full w-full object-cover"
         aria-label="Hero background reel"
       >
-        <source src={heroVideo} type="video/mp4" />
+        <source src={heroVideo} type="video/webm" />
       </video>
 
       {/* Subtle overlay keeps the text readable over video */}
