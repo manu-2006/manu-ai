@@ -25,12 +25,16 @@ const Hero = () => {
     if (video.paused || video.ended) {
       if (video.ended) video.currentTime = 0;
       try {
+        // A user click permits audio playback in browsers that block audible autoplay.
+        video.muted = false;
         await video.play();
         setIsPlaying(true);
       } catch (error) {
         console.error('Unable to play hero reel:', error);
         setIsPlaying(false);
       }
+    } else if (video.muted) {
+      video.muted = false;
     } else {
       video.pause();
       setIsPlaying(false);
@@ -107,7 +111,7 @@ const Hero = () => {
         <button
           type="button"
           onClick={toggleVideo}
-          aria-label={isPlaying ? 'Pause hero reel' : 'Play hero reel'}
+          aria-label={isPlaying ? 'Unmute or pause hero reel' : 'Play hero reel with sound'}
           className="mt-8 md:mt-0 flex flex-row md:flex-col items-center gap-2 md:gap-3 cursor-pointer group self-start md:self-auto"
         >
           <span className="w-12 h-12 md:w-20 md:h-20 rounded-full border border-white/30 bg-black/30 backdrop-blur-md flex justify-center items-center group-hover:scale-110 group-hover:bg-[#C9A96E] transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_40px_rgba(201,169,110,0.6)]">
@@ -122,7 +126,7 @@ const Hero = () => {
             )}
           </span>
           <span className="text-white text-[10px] md:text-xs font-bold tracking-widest uppercase opacity-80 group-hover:opacity-100 transition-opacity">
-            {isPlaying ? 'Pause Reel' : 'Play Reel'}
+            {isPlaying ? 'Sound On / Pause' : 'Play With Sound'}
           </span>
         </button>
       </div>
