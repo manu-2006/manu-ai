@@ -14,11 +14,7 @@ const Hero = () => {
       easing: 'ease-out'
     });
 
-    // Keep the reel paused on page load; visitors can play it with the control.
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
+    // The muted video is allowed to autoplay; the control can pause or resume it.
   }, []);
 
   const toggleVideo = async (event) => {
@@ -46,13 +42,14 @@ const Hero = () => {
       {/* Hero reel background */}
       <video
         ref={videoRef}
+        autoPlay
         muted
         playsInline
-        preload="metadata"
+        preload="auto"
         loop
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
-        className="absolute inset-0 z-0 h-full w-full object-cover md:left-auto md:right-[6%] md:w-auto md:aspect-[9/16]"
+        className="absolute inset-0 z-0 h-full w-full object-cover"
         aria-label="Hero background reel"
       >
         <source src={heroVideo} type="video/mp4" />
