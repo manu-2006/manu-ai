@@ -1,157 +1,25 @@
-👋 Hi, I'm Manu Kumar
+# Manu Kumar P — Developer Portfolio
 
-<div align="center">AI Security Developer | Cybersecurity Enthusiast | Full Stack Developer
+Personal portfolio website built with React, Vite, Tailwind CSS, Framer Motion, and AOS.
 
-Building intelligent systems powered by AI, Machine Learning, and Cybersecurity.
+## Run locally
 
-</div>
----
+```bash
+npm ci
+npm run dev
+```
 
-🚀 About Me
+## Build
 
-I am a passionate BCA student focused on:
+```bash
+npm run build
+```
 
-Artificial Intelligence
+The GitHub Actions workflow in `.github/workflows/deploy.yml` builds and deploys the site to GitHub Pages on pushes to `main` or `master`. Enable GitHub Pages with **GitHub Actions** as the build and deployment source in repository Settings → Pages.
 
-Cybersecurity
+## Profile
 
-Full Stack Development
-
-Machine Learning
-
-Security Automation
-
-Intelligent Software Systems
-
-
-I enjoy building projects that combine innovation, automation, and real-world problem solving.
-
-My primary interest lies in developing AI-powered cybersecurity systems, vulnerability analysis tools, and futuristic software solutions.
-
-
----
-
-🛠 Tech Stack
-
-Languages
-
-Python
-
-Java
-
-C
-
-HTML
-
-CSS
-
-JavaScript
-
-
-Technologies & Tools
-
-Machine Learning
-
-Git & GitHub
-
-Cybersecurity Basics
-
-Vulnerability Analysis
-
-Frontend Development
-
-Responsive Web Design
-
-API Integration
-
-
-
----
-
-🌟 Featured Projects
-
-🔐 AI Digital Twin Hacker
-
-Advanced AI-powered cybersecurity scanner with:
-
-Vulnerability Analysis
-
-AI Attack Prediction
-
-Risk Scoring Engine
-
-Security Recommendations
-
-Real-Time Scanning Concepts
-
-Intelligent Threat Detection
-
-
-Tech Used
-
-Python • HTML • CSS • JavaScript • AI Concepts
-
-
----
-
-🌱 AgriVision
-
-AI-powered plant disease detection system using Machine Learning and image analysis.
-
-Features
-
-Plant Disease Detection
-
-Image Classification
-
-Smart Agriculture Concepts
-
-AI-Based Analysis
-
-
-Tech Used
-
-Python • Machine Learning • OpenCV • HTML • CSS
-
-
----
-
-📈 Currently Learning
-
-Advanced Cybersecurity
-
-AI Security Systems
-
-Full Stack Development
-
-Ethical Hacking Concepts
-
-Intelligent Automation
-
-
-
----
-
-📫 Connect With Me
-
-GitHub
-
-https://github.com/manu-2006
-
-Portfolio
-
-https://manu-2006.github.io/manu-ai/
-
-
----
-
-⚡ Vision
-
-To become a skilled AI and Cybersecurity Engineer capable of building intelligent systems that solve real-world security challenges.
-
-
----
-
-<div align="center">⭐ Thank you for visiting my profile ⭐
-
-</div>
+- Name: Manu Kumar P
+- Education: BCA graduate
+- GitHub: https://github.com/manu-2006
+- Portfolio: https://manu-2006.github.io/portfolio/
