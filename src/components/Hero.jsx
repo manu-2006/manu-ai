@@ -57,7 +57,7 @@ const Hero = () => {
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
         onError={(event) => console.error('Hero video failed to load:', event.currentTarget.error)}
-        className="absolute inset-0 z-0 h-full w-full object-cover"
+        className="absolute inset-0 z-0 h-full w-full object-cover object-[right_center]"
         aria-label="Hero background reel"
       >
         <source src={heroVideo} type="video/webm" />
@@ -131,6 +131,24 @@ const Hero = () => {
           <span className="text-white text-[10px] md:text-xs font-bold tracking-widest uppercase opacity-80 group-hover:opacity-100 transition-opacity">
             {isPlaying ? (isMuted ? 'Enable Sound' : 'Pause Reel') : 'Play With Sound'}
           </span>
+        </button>
+        <button
+          type="button"
+          onClick={(event) => {
+            event.stopPropagation();
+            const video = videoRef.current;
+            if (!video) return;
+            const nextMuted = !video.muted;
+            video.muted = nextMuted;
+            setIsMuted(nextMuted);
+            if (video.paused) {
+              video.play().then(() => setIsPlaying(true)).catch((error) => console.error('Unable to play hero reel:', error));
+            }
+          }}
+          aria-label={isMuted ? 'Turn hero video sound on' : 'Mute hero video'}
+          className="mt-8 md:mt-0 rounded-full border border-white/30 bg-black/40 px-4 py-3 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md hover:bg-black/60 transition-colors"
+        >
+          {isMuted ? 'Sound On' : 'Mute'}
         </button>
       </div>
 
