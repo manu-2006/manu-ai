@@ -1,74 +1,85 @@
-# 🍑 Peach Portfolio
+# Manu Kumar P — Portfolio
 
-A warm, friendly, animated developer portfolio, built with React, GSAP and lots of little details.
-Free to use: fork it, edit **one file**, swap in your photos, and ship it.
+Personal developer portfolio for **Manu Kumar P**, a software developer and AI builder based in Bengaluru, India.
 
-Made by **[Lohitha Damisetti](https://github.com/lohithadamisetti123)**.
+**Live website:** https://manu-ai-psi.vercel.app/  
+**GitHub:** https://github.com/manu-2006  
+**LinkedIn:** https://www.linkedin.com/in/manu-kumar-p  
+**Instagram:** https://www.instagram.com/im_._manu  
+**Email:** its.manukumar13@gmail.com
 
-## ✨ Highlights
+## About
 
-- **Hero:** a cut-out portrait that **turns to look at your cursor**.
-- **About:** a photo stack you can click through, with one role per photo.
-- **Work:** project cards that start scattered and tidy themselves up as you scroll.
-- **Journey:** a scrapbook map with taped polaroids and a road that draws itself while your avatar travels along it.
-- **Toolbox:** a sticker sheet of skills you can drag around, plus a Shuffle button.
-- **Milestones:** a certificate wall with issuer logos, and big numbers that roll into place.
-- **Contact:** a coral card with a cut-out "say hi" sticker.
-- Soft curved section edges, smooth scrolling (Lenis), and a responsive layout for phones.
+I completed my Bachelor of Computer Applications (BCA) at ISBR College and am currently pursuing a Master of Computer Applications (MCA). I build web experiences, full-stack applications, AI/ML prototypes, and websites for clients. I’m interested in turning practical problems into useful, thoughtfully designed software.
 
-## 🛠 Tech stack
+## Featured projects
 
-React 19 · Vite · GSAP (ScrollTrigger, SplitText, Draggable) · Lenis · Bricolage Grotesque, DM Sans and Caveat fonts
+- **AI Digital Twin Hacker** — web security analysis concept for URL scanning, risk estimation, and AI-assisted recommendations.
+- **AgriVision** — plant disease detection project exploring TensorFlow and computer vision.
+- **LayerCraft** — AI-assisted poster editor concept focused on editable design layers and preserving Kannada and other Indian-language text.
+- **SECMINBER** — privacy-first personal memory and reminder product concept.
+- **Client websites** — responsive websites and digital experiences built and maintained for clients.
 
-## 🚀 Getting started
+Project descriptions reflect current project work and concepts; they do not imply that every product is publicly released.
+
+## Tech stack
+
+- **Frontend:** HTML, CSS, JavaScript, React, Vite, Tailwind CSS
+- **Backend & programming:** Python, Flask, FastAPI, C, C++, Java
+- **AI & computer vision:** TensorFlow, OpenCV, OCR, AI/ML
+- **Tools & deployment:** Git, GitHub, Supabase, Vercel, SEO
+
+## Run locally
+
+Requirements: Node.js and npm.
 
 ```bash
-git clone https://github.com/lohithadamisetti123/Peach-Portfolio.git
-cd Peach-Portfolio
+git clone https://github.com/manu-2006/manu-ai.git
+cd manu-ai
 npm install
-npm run dev        # http://localhost:5173
+npm run dev
 ```
 
-Build for production:
+Create a production build:
 
 ```bash
-npm run build      # outputs to dist/
-npm run preview    # preview the build locally
+npm run build
+npm run preview
 ```
 
-## 🎨 Make it yours
+The production output is written to `dist/`.
 
-| What to change | Where |
-|---|---|
-| Name, intro, links, projects, journey, skills, certificates, numbers | `src/data.js` |
-| Colours and fonts | the `:root` variables at the top of `src/styles/global.css` |
-| Round avatar (square photo) | `public/img/faces/` |
-| Photo-stack and polaroid photos (4:5 portraits) | `public/img/photos/` |
-| Cut-out frames for the cursor-tracking hero | `public/img/stickers/lg` (full size) and `sm` (half size) |
-| Page title and description | `index.html` |
+## Project structure
 
-**Palette:** `#FFF9F5` background · `#30221F` text · `#FF8066` coral · `#FFE5D9` peach
+```
+public/
+  img/
+    faces/       # Profile/avatar images
+    photos/      # Portfolio photographs
+src/
+  components/    # React page sections and UI components
+  lib/           # Animation and scrolling helpers
+  styles/        # Global styling
+  App.jsx
+  data.js        # Profile, projects, skills, and timeline content
+index.html       # Page title and SEO metadata
+```
 
-### Making your own cursor-tracking cut-out
+## Personalizing the site
 
-1. Record about 1–2 seconds of yourself on a plain background, slowly turning your head to one side.
-2. Export the frames: `ffmpeg -i clip.mp4 f%03d.png`
-3. Remove the background (for example with [rembg](https://github.com/danielgatis/rembg)) and add a white outline if you want the sticker look.
-4. Save the frames as transparent WebP, named `f000.webp`, `f001.webp`… in `public/img/stickers/lg`, with half-size copies in `sm`.
-5. Set `lookFrames` in `src/data.js` to the first and last frame numbers.
+- Update profile details, project cards, skills, and timeline in `src/data.js`.
+- Update page title and SEO metadata in `index.html`.
+- Update colors, typography, layout, and responsive styles in `src/styles/global.css`.
+- Replace portrait assets in `public/img/faces/` and `public/img/photos/` with images you have permission to publish.
 
-No video? A single cut-out photo works too. Set `from` and `to` to the same frame.
+## Deploy with Vercel
 
-> 🔒 Keep personal details such as your phone number out of `data.js`. This site is public.
+1. Import `manu-2006/manu-ai` into Vercel.
+2. Select **Vite** as the framework if prompted.
+3. Use `npm run build` as the build command.
+4. Use `dist` as the output directory.
+5. Deploy the `main` branch.
 
-## 🌐 Deploy
+## Credits and licensing
 
-Works on any static host:
-
-- **Vercel / Netlify:** import the repo. Framework: Vite · Build command: `npm run build` · Output folder: `dist`
-- **GitHub Pages:** run `npm run build` and publish the `dist` folder. Paths are relative, so it works under `/repo-name/` too.
-
-## 📄 License
-
-MIT for the code. The photos in `public/img` belong to the author, so **please replace them with your own**.
-Brand logos come from [Simple Icons](https://simpleicons.org) (CC0).
+This portfolio is customized and maintained by Manu Kumar P. It began from the Peach Portfolio project by [Lohitha Damisetti](https://github.com/lohithadamisetti123). Please retain applicable third-party notices and license terms when redistributing or modifying upstream code. The repository's `LICENSE` file remains the reference for the code license. Personal photographs and project content should only be reused with the rights holder's permission.
