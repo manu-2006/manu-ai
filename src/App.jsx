@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { startScroll, lenis, ScrollTrigger } from './lib/motion'
-import { profile, lookFrames } from './data'
+import { profile } from './data'
 import Loader from './components/Loader'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
@@ -20,13 +20,12 @@ export default function App() {
 
   useEffect(() => {
     startScroll()
-    const dir = innerWidth < 820 ? 'sm' : 'lg'
     const t0 = performance.now()
     Promise.all([
       document.fonts?.ready,
       load(BASE + profile.avatar),
-      load(`${BASE}img/stickers/${dir}/f${String(lookFrames.from).padStart(3, '0')}.webp`),
-    ]).then(() => setTimeout(() => setLoaded(true), Math.max(0, 1500 - (performance.now() - t0))))
+      load(BASE + 'img/photos/portrait-hero.jpg'),
+    ]).then(() => setTimeout(() => setLoaded(true), Math.max(0, 1000 - (performance.now() - t0))))
   }, [])
 
   const finish = () => { setReady(true); lenis?.start(); ScrollTrigger.refresh() }
