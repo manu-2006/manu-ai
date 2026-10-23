@@ -16,7 +16,7 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/manu-kumar-p',
   instagram: 'https://www.instagram.com/im_._manu',
   resume: '',
-  // Personal profile photo supplied by Manu.
+  // Replace this template image with Manu’s own photo when provided.
   avatar: 'img/faces/smile.jpg',
 }
 
@@ -96,4 +96,4 @@ export const certifications = []
 
 // cut-out frames used by the hero (she turns to look at your cursor)
 export const lookFrames = { from: 0, to: 28 }
-export const contactSticker = 'img/photos/portrait-hero.jpg'
+export const contactSticker = 'img/stickers/lg/f239.webp'

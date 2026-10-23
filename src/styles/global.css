@@ -126,7 +126,6 @@ ol, ul { list-style: none; }
 .hr-blob::before { content: ''; position: absolute; inset: 9% 12% auto auto; width: 22%; aspect-ratio: 1; border-radius: 50%; background: var(--coral); opacity: 0.9; }
 @keyframes blob { 50% { border-radius: 56% 44% 0 0 / 48% 58% 0 0; } 100% { border-radius: 44% 56% 0 0 / 60% 46% 0 0; } }
 .hr-person { position: absolute; left: 0; right: 0; bottom: -14px; width: 100%; height: calc(100% + 14px); filter: drop-shadow(0 26px 34px rgba(255, 128, 102, 0.35)); }
-.hr-person-photo { object-fit: cover; object-position: center 18%; border-radius: 0; }
 .hr-note { position: absolute; z-index: 3; left: -6%; top: 0%; font-size: 26px; line-height: 1.05; color: var(--coral-d); transform: rotate(-6deg); pointer-events: none; }
 .hand-arrow { display: block; width: 92px; margin: 6px 0 0 60px; overflow: visible; }
 .hand-arrow path { fill: none; stroke: var(--ink); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
@@ -299,7 +298,7 @@ ol, ul { list-style: none; }
 .ct-mail button:hover { background: var(--white); color: var(--coral-d); }
 .ct-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 .ct-media { position: relative; min-height: 300px; }
-.ct-sticker { position: absolute; right: 0; bottom: -8%; height: 112%; width: min(100%, 420px); max-width: 100%; object-fit: contain; object-position: bottom center; border-radius: 18px; filter: drop-shadow(0 20px 30px rgba(48, 34, 31, 0.25)); transform-origin: 50% 100%; }
+.ct-sticker { position: absolute; right: -4%; bottom: calc(-1 * clamp(32px, 5vw, 72px)); height: 138%; width: auto; max-width: none; filter: drop-shadow(0 20px 30px rgba(48, 34, 31, 0.25)); transform-origin: 50% 100%; }
 .ct-bubble { position: absolute; z-index: 2; left: -6%; top: -16%; font-size: 30px; padding: 6px 18px; border-radius: 20px; background: var(--white); color: var(--ink); box-shadow: var(--shadow); transform: rotate(-6deg); }
 .ct-bubble::after { content: ''; position: absolute; right: 24px; bottom: -8px; width: 16px; height: 16px; background: var(--white); transform: rotate(45deg); border-radius: 3px; }
 .foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 34px 6px 10px; font-size: 14px; color: var(--muted); }
