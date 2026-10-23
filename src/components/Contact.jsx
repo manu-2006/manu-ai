@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { gsap, useGSAP, goTo } from '../lib/motion'
 import Wave from './Wave'
-import { profile, contactSticker } from '../data'
+import { profile } from '../data'
 
 export default function Contact() {
   const root = useRef(null)
@@ -9,10 +9,9 @@ export default function Contact() {
   useGSAP(() => {
     const tl = gsap.timeline({ scrollTrigger: { trigger: root.current, start: 'top 70%' } })
     tl.from('.ct-card', { y: 80, scale: 0.94, opacity: 0, duration: 1.1 })
-      .from('.ct-sticker', { yPercent: 40, rotate: 10, opacity: 0, duration: 1.1, ease: 'back.out(1.5)' }, 0.25)
+      .from('.ct-portrait', { yPercent: 15, opacity: 0, duration: 0.9, ease: 'power2.out' }, 0.25)
       .from('.ct-bubble', { scale: 0, duration: 0.7, ease: 'back.out(3)' }, 0.9)
       .from('.ct-copy > *', { y: 30, opacity: 0, stagger: 0.08, duration: 0.9 }, 0.3)
-    gsap.to('.ct-sticker', { rotate: 2, duration: 2.4, yoyo: true, repeat: -1, ease: 'sine.inOut', transformOrigin: '50% 100%' })
   }, { scope: root })
   const copy = async () => {
     try { await navigator.clipboard.writeText(profile.email); setCopied(true); setTimeout(() => setCopied(false), 1800) } catch { /* ignore */ }
@@ -39,7 +38,7 @@ export default function Contact() {
           </div>
           <div className="ct-media">
             <span className="ct-bubble hand">say hi! 👋</span>
-            <img className="ct-sticker" src={contactSticker} alt="Decorative portrait frame" loading="lazy" />
+            <img className="ct-portrait" src="/img/photos/portrait-profile.jpg" alt="Manu Kumar P" loading="lazy" />
           </div>
         </div>
         <footer className="foot">
