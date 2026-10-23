@@ -1,7 +1,6 @@
 import { useRef } from 'react'
 import { gsap, useGSAP, goTo } from '../lib/motion'
-import { profile, heroCounts, lookFrames } from '../data'
-import LookAt from './LookAt'
+import { profile, heroCounts } from '../data'
 import { Squiggle, Arrow, Spark } from './Bits'
 
 export default function Hero({ ready }) {
@@ -49,7 +48,7 @@ export default function Hero({ ready }) {
 
         <div className="hr-visual">
           <div className="hr-blob" />
-          <LookAt from={lookFrames.from} to={lookFrames.to} className="hr-person" label={profile.full} />
+          <img src="/img/photos/portrait-hero.jpg" className="hr-person hr-person-photo" alt={profile.full} />
           <div className="hr-note hand">
             move your cursor,<br />I’ll look at it!
             <Arrow />

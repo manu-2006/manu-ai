@@ -346,3 +346,6 @@ ol, ul { list-style: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition-duration: 0.001ms !important; }
 }
+
+/* Personal portfolio portrait image */
+.hr-person-photo { display:block; width:100%; height:100%; object-fit:contain; object-position:center bottom; border-radius:0; }
