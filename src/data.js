@@ -1,9 +1,4 @@
-/* ════════════════════════════════════════════════════════════
-   Everything you see on the site lives here. Edit freely.
-   Colours & fonts: top of src/styles/global.css
-   Photos: public/img (faces = round avatars, photos = polaroids & photo stack,
-   stickers = cut-out frames with a white sticker border)
-   ════════════════════════════════════════════════════════════ */
+/* Portfolio content and personal details. Photos are stored in public/img. */
 
 export const profile = {
   name: 'Manu',
@@ -16,7 +11,6 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/manu-kumar-p',
   instagram: 'https://www.instagram.com/im_._manu',
   resume: '',
-  // Replace this template image with Manu’s own photo when provided.
   avatar: 'img/faces/smile.jpg',
 }
 
@@ -43,7 +37,6 @@ export const about = {
   ],
 }
 
-/* visual: 'gauge' | 'heatmap' | 'outfit' (illustrated art), or add image: 'img/...' */
 export const projects = [
   {
     title: 'AI Digital Twin Hacker', tag: 'AI · Security research', visual: 'gauge',
@@ -90,10 +83,5 @@ export const skills = [
   'GitHub', 'Vercel', 'Responsive Design', 'AI/ML', 'Computer Vision', 'SEO',
 ]
 
-// No unverified coding-platform scores or certifications are displayed.
 export const scoreboard = []
 export const certifications = []
-
-// cut-out frames used by the hero (she turns to look at your cursor)
-export const lookFrames = { from: 0, to: 28 }
-export const contactSticker = 'img/stickers/lg/f239.webp'
