@@ -1,180 +1,61 @@
-import React, { useRef, useEffect, useState } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import heroVideo from '../assets/hero-video/80810-Picsart-BackgroundRemover.webm';
+import { useRef } from 'react'
+import { gsap, useGSAP, goTo } from '../lib/motion'
+import { profile, heroCounts, lookFrames } from '../data'
+import LookAt from './LookAt'
+import { Squiggle, Arrow, Spark } from './Bits'
 
-const Hero = () => {
-  const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
+export default function Hero({ ready }) {
+  const root = useRef(null)
 
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      easing: 'ease-out'
-    });
+  useGSAP(() => {
+    if (!ready) return
+    const tl = gsap.timeline()
+    tl.from('.hr-hello', { y: 20, opacity: 0, duration: 0.8 })
+      .from('.hr-name .ch', { yPercent: 110, rotate: 8, stagger: 0.05, duration: 1.1 }, 0.1)
+      .to('.hr-name .squiggle path', { strokeDashoffset: 0, duration: 1.2, ease: 'power2.inOut' }, 0.6)
+      .from('.hr-sub, .hr-counts, .hr-ctas', { y: 30, opacity: 0, stagger: 0.1, duration: 1 }, 0.4)
+      .from('.hr-blob', { scale: 0.6, opacity: 0, duration: 1.4, ease: 'elastic.out(1, 0.7)' }, 0.1)
+      .from('.hr-person', { yPercent: 30, opacity: 0, duration: 1.2, ease: 'back.out(1.4)' }, 0.3)
+      .from('.hr-note', { opacity: 0, x: -10, duration: 0.6 }, 1.6)
+      .to('.hr-note .hand-arrow path', { strokeDashoffset: 0, duration: 0.8, stagger: 0.3, ease: 'power2.inOut' }, 1.6)
+  }, { scope: root, dependencies: [ready] })
 
-    // The muted video is allowed to autoplay; the control can pause or resume it.
-    // Deployment trigger: keep the hero reel sound and right-aligned framing update in sync.
-  }, []);
-
-  const toggleVideo = async (event) => {
-    event.stopPropagation();
-    const video = videoRef.current;
-    if (!video) return;
-
-    if (video.paused || video.ended) {
-      if (video.ended) video.currentTime = 0;
-      try {
-        // A user click permits audio playback in browsers that block audible autoplay.
-        video.muted = false;
-        setIsMuted(false);
-        await video.play();
-        setIsPlaying(true);
-      } catch (error) {
-        console.error('Unable to play hero reel:', error);
-        setIsPlaying(false);
-      }
-    } else if (isMuted || video.muted) {
-      video.muted = false;
-      setIsMuted(false);
-    } else {
-      video.pause();
-      setIsPlaying(false);
-    }
-  };
+  useGSAP(() => {
+    gsap.to('.hr-visual', { yPercent: -8, ease: 'none', scrollTrigger: { trigger: root.current, start: 'top top', end: 'bottom top', scrub: true } })
+  }, { scope: root })
 
   return (
-    <section id="home" className="relative w-full h-screen overflow-hidden bg-black">
-      {/* Hero reel background */}
-      <video
-        ref={videoRef}
-        autoPlay
-        muted={isMuted}
-        playsInline
-        preload="auto"
-        loop
-        onPlay={() => setIsPlaying(true)}
-        onPause={() => setIsPlaying(false)}
-        onError={(event) => console.error('Hero video failed to load:', event.currentTarget.error)}
-        className="absolute inset-0 z-0 h-full w-full object-cover object-[right_center]"
-        aria-label="Hero background reel"
-      >
-        <source src={heroVideo} type="video/webm" />
-      </video>
-
-      {/* Subtle overlay keeps the text readable over video */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-black/35 via-black/10 to-black/10"
-      />
-
-      {/* Content Container */}
-      <div className="absolute inset-0 z-20 px-6 pb-20 md:pb-[8%] md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row justify-end md:justify-between items-start md:items-end text-left w-full">
-        <div className="flex flex-col items-start text-left max-w-2xl w-full">
-          <h1
-            data-aos="fade-up"
-            className="text-white text-3xl md:text-5xl font-bold mb-4 tracking-tight"
-          >
-            Hi, I’m <br /> <span className="text-transparent [-webkit-text-stroke:1.5px_#C9A96E]">Manu Kumar P</span>
+    <section className="hero" id="top" ref={root}>
+      <div className="hr-grid">
+        <div className="hr-copy">
+          <p className="hr-hello hand">Hi there, I’m <span aria-hidden="true">👋</span></p>
+          <h1 className="hr-name">
+            <span className="hr-name-text">{profile.name.split('').map((c, i) => <span className="ch-mask" key={i}><span className="ch">{c}</span></span>)}</span>
+            <Squiggle />
           </h1>
-
-          <p
-            data-aos="fade-up"
-            data-aos-delay="200"
-            className="text-white text-sm md:text-lg font-semibold mb-8 max-w-md drop-shadow-md"
-          >
-            BCA graduate • Web Developer • Building practical digital products.
+          <p className="hr-sub">
+            <b>{profile.role}</b> <Spark /> {profile.intro}
           </p>
-
-          <div
-            data-aos="fade-up"
-            data-aos-delay="400"
-            className="flex flex-row flex-wrap items-center gap-3 w-full"
-          >
-            <a
-              href="https://github.com/manu-2006"
-              className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md inline-block"
-              target="_blank"
-              rel="noreferrer"
-            >
-              View My Work
-            </a>
-
-            <a
-              href="#contact"
-              className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-black/40 border border-white text-white font-semibold hover:bg-black/60 transition-all duration-300 backdrop-blur-md inline-block"
-            >
-              Contact Me
-            </a>
+          <ul className="hr-counts" aria-label="Highlights">
+            {heroCounts.map((c) => <li key={c.label}><b>{c.value}</b><span>{c.label}</span></li>)}
+          </ul>
+          <div className="hr-ctas">
+            <button className="btn btn-coral" onClick={() => goTo('#work')}>See my work <span>→</span></button>
+            {profile.resume
+              ? <a className="btn btn-line" href={profile.resume} target="_blank" rel="noreferrer">Résumé ↓</a>
+              : <button className="btn btn-line" onClick={() => goTo('#contact')}>Message me</button>}
           </div>
         </div>
 
-        {/* Video playback control */}
-        <button
-          type="button"
-          onClick={toggleVideo}
-          aria-label={isPlaying ? (isMuted ? 'Enable sound' : 'Pause hero reel') : 'Play hero reel with sound'}
-          className="mt-8 md:mt-0 flex flex-row md:flex-col items-center gap-2 md:gap-3 cursor-pointer group self-start md:self-auto"
-        >
-          <span className="w-12 h-12 md:w-20 md:h-20 rounded-full border border-white/30 bg-black/30 backdrop-blur-md flex justify-center items-center group-hover:scale-110 group-hover:bg-[#C9A96E] transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_40px_rgba(201,169,110,0.6)]">
-            {isPlaying ? (
-              <svg className="w-5 h-5 md:w-8 md:h-8 text-white group-hover:text-black" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-              </svg>
-            ) : (
-              <svg className="w-5 h-5 md:w-8 md:h-8 text-white group-hover:text-black ml-0.5 md:ml-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            )}
-          </span>
-          <span className="text-white text-[10px] md:text-xs font-bold tracking-widest uppercase opacity-80 group-hover:opacity-100 transition-opacity">
-            {isPlaying ? (isMuted ? 'Enable Sound' : 'Pause Reel') : 'Play With Sound'}
-          </span>
-        </button>
-        <button
-          type="button"
-          onClick={(event) => {
-            event.stopPropagation();
-            const video = videoRef.current;
-            if (!video) return;
-            const nextMuted = !video.muted;
-            video.muted = nextMuted;
-            setIsMuted(nextMuted);
-            if (video.paused) {
-              video.play().then(() => setIsPlaying(true)).catch((error) => console.error('Unable to play hero reel:', error));
-            }
-          }}
-          aria-label={isMuted ? 'Turn hero video sound on' : 'Mute hero video'}
-          className="mt-8 md:mt-0 rounded-full border border-white/30 bg-black/40 px-4 py-3 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md hover:bg-black/60 transition-colors"
-        >
-          {isMuted ? 'Sound On' : 'Mute'}
-        </button>
-      </div>
-
-      <div
-        data-aos="fade-up"
-        data-aos-delay="800"
-        className="hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 pointer-events-none"
-      >
-        <div className="animate-bounce">
-          <svg
-            className="w-6 h-6 text-[#C9A96E]"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="3"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
+        <div className="hr-visual">
+          <div className="hr-blob" />
+          <LookAt from={lookFrames.from} to={lookFrames.to} className="hr-person" label={profile.full} />
+          <div className="hr-note hand">
+            move your cursor,<br />I’ll look at it!
+            <Arrow />
+          </div>
         </div>
       </div>
     </section>
-  );
-};
-
-export default Hero;
+  )
+}
