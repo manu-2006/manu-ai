@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://manu-2006.github.io/portfolio/">Portfolio</a> ·
+  <a href="https://manu-ai-psi.vercel.app/">Portfolio</a> ·
   <a href="https://www.linkedin.com/in/manu-kumar-p">LinkedIn</a> ·
   <a href="mailto:its.manukumar13@gmail.com">Email</a> ·
   <a href="https://github.com/manu-2006">GitHub</a>
@@ -69,7 +69,7 @@ I’m strengthening my engineering fundamentals while building deeper projects i
 
 I'm happy to connect about software engineering, AI projects, collaboration, and opportunities.
 
-- **Portfolio:** https://manu-2006.github.io/portfolio/
+- **Portfolio:** https://manu-ai-psi.vercel.app/
 - **LinkedIn:** https://www.linkedin.com/in/manu-kumar-p
 - **Email:** its.manukumar13@gmail.com
 
