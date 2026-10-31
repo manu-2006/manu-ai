@@ -1,85 +1,81 @@
-# Manu Kumar P — Portfolio
+# Manu Kumar P
 
-Personal developer portfolio for **Manu Kumar P**, a software developer and AI builder based in Bengaluru, India.
+<p align="center">
+  <strong>AI Engineer in Progress · Software Developer · Full-Stack Builder</strong><br/>
+  Building practical software at the intersection of AI, backend systems, and thoughtful product design.
+</p>
 
-**Live website:** https://manu-ai-psi.vercel.app/  
-**GitHub:** https://github.com/manu-2006  
-**LinkedIn:** https://www.linkedin.com/in/manu-kumar-p  
-**Instagram:** https://www.instagram.com/im_._manu  
-**Email:** its.manukumar13@gmail.com
+<p align="center">
+  <a href="https://manu-2006.github.io/portfolio/">Portfolio</a> ·
+  <a href="https://www.linkedin.com/in/manu-kumar-p">LinkedIn</a> ·
+  <a href="mailto:its.manukumar13@gmail.com">Email</a> ·
+  <a href="https://github.com/manu-2006">GitHub</a>
+</p>
+
+---
 
 ## About
 
-I completed my Bachelor of Computer Applications (BCA) at ISBR College and am currently pursuing a Master of Computer Applications (MCA). I build web experiences, full-stack applications, AI/ML prototypes, and websites for clients. I’m interested in turning practical problems into useful, thoughtfully designed software.
+I'm Manu Kumar P, an MCA student and developer based in Bengaluru, India. I enjoy taking practical problems from idea to working software—designing the interface, building the backend, integrating intelligent features, and making the product usable.
 
-## Featured projects
+My current focus is **AI-powered software engineering**: reliable APIs, full-stack applications, machine learning, computer vision, and systems that solve concrete problems.
 
-- **AI Digital Twin Hacker** — web security analysis concept for URL scanning, risk estimation, and AI-assisted recommendations.
-- **AgriVision** — plant disease detection project exploring TensorFlow and computer vision.
-- **LayerCraft** — AI-assisted poster editor concept focused on editable design layers and preserving Kannada and other Indian-language text.
-- **SECMINBER** — privacy-first personal memory and reminder product concept.
-- **Client websites** — responsive websites and digital experiences built and maintained for clients.
+- Currently exploring: AI engineering, backend architecture, and production-ready application development.
+- Interested in: AI Engineer, Software Engineer, and Full-Stack Engineer opportunities.
+- Approach: Build, measure, document, improve.
 
-Project descriptions reflect current project work and concepts; they do not imply that every product is publicly released.
+## Selected Work
 
-## Tech stack
+### AI Digital Twin Hacker
+An educational web-security analysis project that combines website scanning, risk scoring, and AI-assisted security recommendations.
 
-- **Frontend:** HTML, CSS, JavaScript, React, Vite, Tailwind CSS
-- **Backend & programming:** Python, Flask, FastAPI, C, C++, Java
-- **AI & computer vision:** TensorFlow, OpenCV, OCR, AI/ML
-- **Tools & deployment:** Git, GitHub, Supabase, Vercel, SEO
+**Focus:** Python · Flask · Security analysis · Risk scoring · Chart.js  
+[View repository](https://github.com/manu-2006/AI-Digital-Twin-Hacker)
 
-## Run locally
+### AgriVision
+A plant-disease detection application that uses image classification to analyze leaf images and present prediction results.
 
-Requirements: Node.js and npm.
+**Focus:** Python · TensorFlow/Keras · OpenCV · Flask  
+[View repository](https://github.com/manu-2006/Agrivision)
 
-```bash
-git clone https://github.com/manu-2006/manu-ai.git
-cd manu-ai
-npm install
-npm run dev
-```
+### LayerCraft
+An AI-assisted design reconstruction concept focused on turning flattened posters into editable layers while preserving Kannada and other Indian-language text.
 
-Create a production build:
+**Focus:** OCR · Computer Vision · Unicode text handling · React · Python  
+[Project repository](https://github.com/manu-2006/kannada-poster-studio)
 
-```bash
-npm run build
-npm run preview
-```
+> Project descriptions reflect the current scope of the work. Features and deployment status should be checked in each repository.
 
-The production output is written to `dist/`.
+## Technical Toolkit
 
-## Project structure
+| Area | Technologies |
+|---|---|
+| Languages | Python, JavaScript, TypeScript, C, C++, Java |
+| Frontend | React, HTML, CSS, Tailwind CSS, Vite |
+| Backend | FastAPI, Flask, REST APIs |
+| AI / ML | Machine Learning, TensorFlow, OpenCV, OCR, Computer Vision |
+| Data | PostgreSQL, Supabase |
+| Tools | Git, GitHub, Docker, Linux, Vercel |
 
-```
-public/
-  img/
-    faces/       # Profile/avatar images
-    photos/      # Portfolio photographs
-src/
-  components/    # React page sections and UI components
-  lib/           # Animation and scrolling helpers
-  styles/        # Global styling
-  App.jsx
-  data.js        # Profile, projects, skills, and timeline content
-index.html       # Page title and SEO metadata
-```
+## What I'm Working Toward
 
-## Personalizing the site
+I’m strengthening my engineering fundamentals while building deeper projects in:
 
-- Update profile details, project cards, skills, and timeline in `src/data.js`.
-- Update page title and SEO metadata in `index.html`.
-- Update colors, typography, layout, and responsive styles in `src/styles/global.css`.
-- Replace portrait assets in `public/img/faces/` and `public/img/photos/` with images you have permission to publish.
+- AI systems with measurable evaluation and reliable failure handling.
+- Scalable backend services, APIs, queues, and database design.
+- Full-stack products with clean UX and production-minded architecture.
+- Computer vision and Indian-language document and design workflows.
 
-## Deploy with Vercel
+## Connect
 
-1. Import `manu-2006/manu-ai` into Vercel.
-2. Select **Vite** as the framework if prompted.
-3. Use `npm run build` as the build command.
-4. Use `dist` as the output directory.
-5. Deploy the `main` branch.
+I'm happy to connect about software engineering, AI projects, collaboration, and opportunities.
 
-## Credits and licensing
+- **Portfolio:** https://manu-2006.github.io/portfolio/
+- **LinkedIn:** https://www.linkedin.com/in/manu-kumar-p
+- **Email:** its.manukumar13@gmail.com
 
-This portfolio is customized and maintained by Manu Kumar P. It began from the Peach Portfolio project by [Lohitha Damisetti](https://github.com/lohithadamisetti123). Please retain applicable third-party notices and license terms when redistributing or modifying upstream code. The repository's `LICENSE` file remains the reference for the code license. Personal photographs and project content should only be reused with the rights holder's permission.
+---
+
+<p align="center">
+  <sub>Designed and maintained by Manu Kumar P · Bengaluru, India</sub>
+</p>
