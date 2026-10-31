@@ -39,10 +39,9 @@ A plant-disease detection application that uses image classification to analyze 
 [View repository](https://github.com/manu-2006/Agrivision)
 
 ### LayerCraft
-An AI-assisted design reconstruction concept focused on turning flattened posters into editable layers while preserving Kannada and other Indian-language text.
+An AI-assisted design reconstruction project in development, focused on turning flattened posters into editable layers while preserving Kannada and other Indian-language text.
 
-**Focus:** OCR · Computer Vision · Unicode text handling · React · Python  
-[Project repository](https://github.com/manu-2006/kannada-poster-studio)
+**Focus:** OCR · Computer Vision · Unicode text handling · React · Python
 
 > Project descriptions reflect the current scope of the work. Features and deployment status should be checked in each repository.
 
